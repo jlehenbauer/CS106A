@@ -18,8 +18,23 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    for building in range(3):
+        for wall in range(3):
+            paint_wall()
+            if wall < 2:
+                turn_left()
+                move()
+        turn_right()
 
+
+def paint_wall():
+    while left_is_blocked():
+        put_beeper()
+        move()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
 
 # There is no need to edit code beyond this point
 

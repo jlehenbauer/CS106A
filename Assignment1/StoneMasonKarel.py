@@ -17,7 +17,32 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    while not front_is_blocked():
+        repair_column()
+        for i in range(4):
+            move()
+    repair_column()
+
+
+def repair_column():
+    turn_left()
+    column_height = 0
+    while not front_is_blocked():
+        if no_beepers_present():
+            put_beeper()
+        move()
+        column_height += 1
+    if no_beepers_present():
+        put_beeper()
+    turn_around()
+    for i in range(column_height):
+        move()
+    turn_left()
+
+
+def turn_around():
+    turn_left()
+    turn_left()
 
 
 # There is no need to edit code beyond this point
