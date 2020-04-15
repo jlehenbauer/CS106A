@@ -21,7 +21,7 @@ def main():
     comment and replace it with a better, more descriptive one.
     """
     spaces_moved = 0
-    while not front_is_blocked():
+    while front_is_clear():
         spaces_moved += 1
         move()
 
