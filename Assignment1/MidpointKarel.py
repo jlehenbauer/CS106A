@@ -19,18 +19,54 @@ def main():
     spaces she moves. She then turns around, travels
     halfway (rounding down) back, and places a beeper.
     """
-    spaces_moved = 0
+    while no_beepers_present():
+        move_until_object()
+        turn_around()
+        if front_is_clear():
+            move()
+        if no_beepers_present():
+            put_beeper()
+        else:
+            return
+        if front_is_clear():
+            move()
+
+    clear_beepers_in_row()
+
+    turn_around()
+
+    move_until_object()
+
+    if front_is_clear():
+        move()
+
+    clear_beepers_in_row()
+
+    turn_around()
+
+    move_until_object()
+
+
+def clear_beepers_in_row():
     while front_is_clear():
-        spaces_moved += 1
+        if beepers_present():
+            pick_beeper()
         move()
 
+
+def move_until_object():
+    while front_is_clear() and no_beepers_present():
+        move()
+
+
+def turn_around():
     turn_left()
     turn_left()
 
-    for i in range(spaces_moved//2):
-        move()
 
-    put_beeper()
+def turn_right():
+    for i in range(3):
+        turn_left()
 
 
 # There is no need to edit code beyond this point

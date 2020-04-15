@@ -13,18 +13,59 @@ sample worlds supplied in the starter folder.
 
 
 def main():
-    even = False
-    turn_left()
+    # If our world has a width of 1, turn left to checker upward
+    if front_is_blocked():
+        turn_left()
+
+    # While we have an available path, checker right, turn, then
+    # checker back to the left, and repeat.
     while front_is_clear():
-        if checker_up():
-            even = True
+        # Move to the right first and turn around at the end
+        # Even-numbered size
+        if checker_straight():
+            new_row_right()
+        # Odd-numbered size
+        else:
+            put_beeper()
+            new_row_right()
+            if front_is_clear():
+                move()
+
+        # Move to the left and turn around at the end
+        # after checking if we're already at the end of the world
+        if front_is_clear():
+            if checker_straight():
+                new_row_left()
+            else:
+                put_beeper()
+                new_row_left()
+                if front_is_clear():
+                    move()
+
+
+def checker_straight():
+    while front_is_clear():
+        put_beeper()
+        move()
         if front_is_clear():
             move()
-            turn_right()
-            checker_down(even)
-        if front_is_clear():
-            move()
-            turn_left()
+        else:
+            return True
+    return False
+
+
+def new_row_right():
+    turn_left()
+    if front_is_clear():
+        move()
+        turn_left()
+
+
+def new_row_left():
+    turn_right()
+    if front_is_clear():
+        move()
+        turn_right()
 
 
 def checker_up():
@@ -57,6 +98,11 @@ def checker_down(even):
 def turn_right():
     for i in range(3):
         turn_left()
+
+
+def turn_around():
+    turn_left()
+    turn_left()
 
 
 if __name__ == "__main__":

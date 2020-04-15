@@ -28,16 +28,14 @@ def repair_column():
     floor and repositions herself to face east.
     """
     turn_left()
-    column_height = 0
     while front_is_clear():
         if no_beepers_present():
             put_beeper()
         move()
-        column_height += 1
     if no_beepers_present():
         put_beeper()
     turn_around()
-    for i in range(column_height):
+    while front_is_clear():
         move()
     turn_left()
 
