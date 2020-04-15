@@ -20,7 +20,18 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    spaces_moved = 0
+    while not front_is_blocked():
+        spaces_moved += 1
+        move()
+
+    turn_left()
+    turn_left()
+
+    for i in range(spaces_moved//2):
+        move()
+
+    put_beeper()
 
 
 # There is no need to edit code beyond this point
