@@ -13,10 +13,8 @@ Triple sample worlds supplied in the starter folder.
 
 def main():
     """
-    You should write your code to make Karel do its task in
-    this function. Make sure to delete the 'pass' line before
-    starting to write your own code. You should also delete this
-    comment and replace it with a better, more descriptive one.
+    Karel repeats painting 3 walls on 3 buildings, turning right
+    when she reaches a new building.
     """
     for building in range(3):
         for wall in range(3):
@@ -28,6 +26,9 @@ def main():
 
 
 def paint_wall():
+    """
+    Karel paints as long as she has a wall to her left.
+    """
     while left_is_blocked():
         put_beeper()
         move()

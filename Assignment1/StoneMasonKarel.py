@@ -12,10 +12,7 @@ sample worlds supplied in the starter folder.
 
 def main():
     """
-    You should write your code to make Karel do its task in
-    this function. Make sure to delete the 'pass' line before
-    starting to write your own code. You should also delete this
-    comment and replace it with a better, more descriptive one.
+    Karel moves forward, repairing columns every four spaces.
     """
     while front_is_clear():
         repair_column()
@@ -25,6 +22,11 @@ def main():
 
 
 def repair_column():
+    """
+    The repair_column() method directs Karel upward, places
+    beepers anywhere they're missing, then returns to the
+    floor and repositions herself to face east.
+    """
     turn_left()
     column_height = 0
     while front_is_clear():

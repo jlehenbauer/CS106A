@@ -15,10 +15,9 @@ assume that it is at least as tall as it is wide.
 
 def main():
     """
-    You should write your code to make Karel do its task in
-    this function. Make sure to delete the 'pass' line before
-    starting to write your own code. You should also delete this
-    comment and replace it with a better, more descriptive one.
+    Karel moves across the room and records how many
+    spaces she moves. She then turns around, travels
+    halfway (rounding down) back, and places a beeper.
     """
     spaces_moved = 0
     while front_is_clear():
