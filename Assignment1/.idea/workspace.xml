@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="164ec03e-79f6-4ab8-be9b-867bab4fb0f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckerboardKarel.py" beforeDir="false" afterPath="$PROJECT_DIR$/CheckerboardKarel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MidpointKarel.py" beforeDir="false" afterPath="$PROJECT_DIR$/MidpointKarel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoneMasonKarel.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoneMasonKarel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HospitalKarel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -42,9 +40,15 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="597" y="161" key="SettingsEditor" timestamp="1586295292705">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="405" y="320" key="FileChooserDialogImpl" timestamp="1587077654142">
+      <screen x="0" y="0" width="1368" height="882" />
     </state>
+    <state x="-760" y="-394" key="FileChooserDialogImpl/0.0.1368.882/-1080.-1080.1080.1890@-1080.-1080.1080.1890" timestamp="1587069426004" />
+    <state x="405" y="320" key="FileChooserDialogImpl/0.0.1368.882/-1080.-1080.1080.1890@0.0.1368.882" timestamp="1587077654142" />
+    <state x="-1065" y="-213" width="998" height="708" key="SettingsEditor" timestamp="1587069410268">
+      <screen x="-1080" y="-1080" width="1080" height="1890" />
+    </state>
+    <state x="-1065" y="-213" width="998" height="708" key="SettingsEditor/0.0.1368.882/-1080.-1080.1080.1890@-1080.-1080.1080.1890" timestamp="1587069410268" />
     <state x="597" y="161" key="SettingsEditor/0.0.1920.1050/1920.0.1280.689@0.0.1920.1050" timestamp="1586295292705" />
   </component>
 </project>

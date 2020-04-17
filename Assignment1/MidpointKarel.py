@@ -19,23 +19,33 @@ def main():
     spaces she moves. She then turns around, travels
     halfway (rounding down) back, and places a beeper.
     """
-    while no_beepers_present():
-        move_until_object()
+    for i in range(2):
+        move_until_wall()
         turn_around()
         if front_is_clear():
             move()
         if no_beepers_present():
             put_beeper()
-        else:
-            return
+            if front_is_clear():
+                move()
+    while no_beepers_present():
+        move_until_beeper()
+        turn_around()
         if front_is_clear():
             move()
+        if no_beepers_present():
+            put_beeper()
+            if front_is_clear():
+                move()
+
+    if front_is_blocked():
+        turn_around()
 
     clear_beepers_in_row()
 
     turn_around()
 
-    move_until_object()
+    move_until_beeper()
 
     if front_is_clear():
         move()
@@ -44,7 +54,7 @@ def main():
 
     turn_around()
 
-    move_until_object()
+    move_until_beeper()
 
 
 def clear_beepers_in_row():
@@ -54,8 +64,13 @@ def clear_beepers_in_row():
         move()
 
 
-def move_until_object():
-    while front_is_clear() and no_beepers_present():
+def move_until_wall():
+    while front_is_clear():
+        move()
+
+
+def move_until_beeper():
+    while no_beepers_present():
         move()
 
 
