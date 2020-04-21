@@ -1,4 +1,4 @@
-from karel.stanfordkarel import * 
+from karel.stanfordkarel import *
 
 """
 File: MidpointKarel.py
@@ -16,18 +16,17 @@ assume that it is at least as tall as it is wide.
 def main():
     """
     Karel moves across the room and records how many
-    spaces she moves. She then turns around, travels
-    halfway (rounding down) back, and places a beeper.
+    spaces they move. To do this, Karel places beepers
+    at either end of the room, then rebounds between
+    them, placing new beepers as Karel finds spaces
+    without them. When Karel encounters a repeat beeper
+    for the first time, the midpoint has been found!
+    Clear all unnecessary beepers and return to the middle.
     """
-    for i in range(2):
-        move_until_wall()
-        turn_around()
-        if front_is_clear():
-            move()
-        if no_beepers_present():
-            put_beeper()
-            if front_is_clear():
-                move()
+    place_beepers_at_endpoints()
+
+    # Rebound between endpoints, placing beepers until
+    # ending on one. This is the midpoint!
     while no_beepers_present():
         move_until_beeper()
         turn_around()
@@ -38,30 +37,48 @@ def main():
             if front_is_clear():
                 move()
 
-    if front_is_blocked():
-        turn_around()
-
+    # Remove unnecessary beepers in one direction
     clear_beepers_in_row()
 
-    turn_around()
-
-    move_until_beeper()
-
+    # Clear in the other direction, if possible
     if front_is_clear():
         move()
+        clear_beepers_in_row()
 
-    clear_beepers_in_row()
+    # Move onto the remaining beeper (midpoint)
+    if front_is_clear():
+        move_until_beeper()
 
-    turn_around()
 
-    move_until_beeper()
+def place_beepers_at_endpoints():
+    """
+    pre-condition: Karel starts at 1, 1 (bottom-left)
+
+    post-condition: Karel is facing west and has moved off the beeper, if possible
+    """
+    for i in range(2):
+        move_until_wall()
+        turn_around()
+        if no_beepers_present():
+            put_beeper()
+            if front_is_clear():
+                move()
 
 
 def clear_beepers_in_row():
+    """
+    pre-condition: Karel is on the space past the midpoint facing toward a wall
+
+    post-condition: Karel is facing the midpoint
+    """
     while front_is_clear():
         if beepers_present():
             pick_beeper()
         move()
+    if beepers_present():
+        turn_around()
+        if front_is_clear():
+            pick_beeper()
 
 
 def move_until_wall():
