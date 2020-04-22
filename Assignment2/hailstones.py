@@ -19,5 +19,6 @@ def main():
 
     print("The process took " + str(count) + " steps to reach 1")
 
+
 if __name__ == "__main__":
     main()
