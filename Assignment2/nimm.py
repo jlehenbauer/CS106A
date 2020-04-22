@@ -13,20 +13,15 @@ def main():
 
         # Depending on who's turn it is, ask them for their move,
         # make sure it's valid, then execute their move
-        if player_turn == 1:
-            take = int(input("Player 1 would you like to remove 1 or 2 stones? "))
-            if check_for_valid_entry(take):
-                stones -= take
+        take = int(input("Player " + str(player_turn) + " would you like to remove 1 or 2 stones? "))
+        if check_for_valid_entry(take):
+            stones -= take
+            if player_turn == 1:
                 player_turn = 2
             else:
-                print("Please enter 1 or 2.")
-        else:
-            take = int(input("Player 2 would you like to remove 1 or 2 stones? "))
-            if check_for_valid_entry(take):
-                stones -= take
                 player_turn = 1
-            else:
-                print("Please enter 1 or 2.")
+        else:
+            print("Please enter 1 or 2.")
         print()
 
     # When no stones remain, the player who's turn it is now
