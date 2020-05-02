@@ -1,12 +1,10 @@
-def convert_to_dog_years(human_years):
-    dog_years = human_years * 7
-    return dog_years
-
-
 def main():
-    human_age = float(input('Enter human age: '))
-    dog_age = convert_to_dog_years(human_age)
-    print('Dog age is:', dog_age)
+    total = 0
+    user_num = int(input("Enter a value: "))
+    while user_num != 0:
+        total += user_num
+        print("Running total is " + str(total))
+        user_num = int(input("Enter a value: "))
 
 
 if __name__ == '__main__':
