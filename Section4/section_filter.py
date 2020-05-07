@@ -1,5 +1,6 @@
 from simpleimage import SimpleImage
 
+BRIGHTNESS_THRESHOLD = 153
 
 def main():
     """
@@ -8,7 +9,12 @@ def main():
     """
     image = SimpleImage('images/simba-sq.jpg')
 
-    # TODO: your code here
+    for pixel in image:
+        average = (pixel.red + pixel.green + pixel.blue) / 3
+        if average > BRIGHTNESS_THRESHOLD:
+            pixel.red = average
+            pixel.green = average
+            pixel.blue = average
 
     image.show()
 
