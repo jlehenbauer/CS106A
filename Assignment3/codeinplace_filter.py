@@ -17,7 +17,10 @@ def main():
     image.show()
 
     # Apply the filter
-    # TODO: your code here
+    for px in image:
+        px.red *= 1.5
+        px.green *= 0.7
+        px.blue *= 1.5
 
     # Show the image after the transform
     image.show()
