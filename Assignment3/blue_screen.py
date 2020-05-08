@@ -10,11 +10,17 @@ Do not include any pixels that are sufficiently blue.
 
 from simpleimage import SimpleImage
 
+BLUE_THRESHOLD = 1.5
 
 def main():
     foreground = SimpleImage('images/tiefighter.jpg')
     background = SimpleImage('images/quad.jpg')
-    # TODO: your code here
+
+    for px in foreground:
+        average = (px.red + px.blue + px.green) // 3
+        if px.blue < average * BLUE_THRESHOLD:
+            background.set_pixel(px.x, px.y, px)
+
     background.show()
 
 
