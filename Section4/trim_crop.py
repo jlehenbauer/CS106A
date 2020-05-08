@@ -23,8 +23,19 @@ def trim_crop_image(original_img, trim_size):
         A new SimpleImage with trim_size pixels shaved off each
         side of the original image
     """
-    # TODO: your code here
-    pass
+    new_w = original_img.width - 2 * trim_size
+    new_h = original_img.height - 2 * trim_size
+
+    cropped = SimpleImage.blank(new_w, new_h)
+
+    for x in range(new_w):
+        old_x = trim_size + x
+        for y in range(new_h):
+            old_y = trim_size + y
+            old_pixel = original_img.get_pixel(old_x, old_y)
+            cropped.set_pixel(x, y, old_pixel)
+
+    return cropped
 
 
 if __name__ == '__main__':
