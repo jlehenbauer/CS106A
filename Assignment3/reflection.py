@@ -14,8 +14,14 @@ from simpleimage import SimpleImage
 
 def make_reflected(filename):
     image = SimpleImage(filename)
-    # TODO: your code here.
-    return image
+
+    reflected = SimpleImage.blank(image.width, image.height * 2)
+
+    for px in image:
+        reflected.set_pixel(px.x, px.y, px)
+        reflected.set_pixel(px.x, (image.height * 2) - (px.y + 1), px)
+
+    return reflected
 
 
 def main():
