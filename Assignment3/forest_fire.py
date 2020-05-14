@@ -24,7 +24,18 @@ def find_flames(filename):
     in order to highlight areas of wildfires.
     """
     image = SimpleImage(filename)
-    # TODO: your code here
+
+    for px in image:
+        average = (px.red + px.blue + px.green) // 3
+        if px.red > average:
+            px.red = 255
+            px.blue = 0
+            px.green = 0
+        else:
+            px.red = average
+            px.blue = average
+            px.green = average
+
     return image
 
 def main():
